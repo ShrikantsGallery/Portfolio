@@ -1,8 +1,11 @@
 import React from "react";
-import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+										 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from "./components/Navbar";
+import Home from './pages/Home';
+import About from './pages/About';
+import Messages from './pages/Messages';
 
 function App() {
   return (
@@ -11,7 +14,9 @@ function App() {
       <Router>
         <Navbar/>
         <Routes>
-          <Route path="/" />
+          <Route path='/' exact component={Home}/>
+          <Route path='/about' component={About} />
+          <Route path='/messages' component={Messages} />
         </Routes>
       </Router>
       {/* <h1>Welcome to Shris Gallery</h1>
@@ -19,4 +24,5 @@ function App() {
     </>
   );
 }
+
 export default App;
